@@ -19,7 +19,7 @@ public class A3GuessNum{
 
   //int for bound
   static int lowBound = 1;
-  static int highBound = 101;
+  static int highBound = 100;
 
   //String for user answer
   static String ans;
