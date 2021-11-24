@@ -6,7 +6,7 @@
 
 import java.util.*;
 
-public class A3GuessNum{
+public class A3GuessNum {
   
   //Create instance of Scanner and Random object
   static Scanner input = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class A3GuessNum{
   static int in, state, score; //int for user input and state in play() method
 
   //int for bound
-  static int lowBound = 1;
+  static int lowBound = 0;
   static int highBound = 100;
 
   //String for user answer
@@ -57,7 +57,7 @@ public class A3GuessNum{
           lowBound = in;
           hint = (num-in) - ((num-in)%10);
           System.out.println("\nLives left: " + live);
-          System.out.println("New range: (" + lowBound + "-" + highBound + ")");
+          System.out.println("Current range: (" + lowBound + "-" + highBound + ")");
           if(num-in >= 1 && num-in <= 10) {
             System.out.println("You are very close, just a bit higher");
           } else {
@@ -72,7 +72,7 @@ public class A3GuessNum{
           highBound = in;
           hint = (in-num) - ((in-num)%10);
           System.out.println("\nLives left: " + live);
-          System.out.println("New range: (" + lowBound + "-" + highBound + ")");
+          System.out.println("Current range: (" + lowBound + "-" + highBound + ")");
           if(in-num >= 1 && in-num <= 10) {
             System.out.println("You are very close, just a bit lower");
           } else {
@@ -105,10 +105,13 @@ public class A3GuessNum{
       ans = input.nextLine();
       if(ans.equals("Yes")) {
         running = true;
+        lowBound = 0;
+        highBound = 100;
         live = INITIAL_LIVE;
+        System.out.println("Loading...\n");
         state = 1;
       } else if(ans.equals("No")) {
-        System.out.println("Scores: " + score);
+        System.out.println("\nScores: " + score);
         System.out.println("END");
         running = false;
       }
@@ -117,12 +120,21 @@ public class A3GuessNum{
 
   //method to check for input validation
   public static void check() {
+    
+    //check if user didn't type an int
     while(!input.hasNextInt()) {
       System.out.println("That is not a number!");
       System.out.print("Please enter a number: ");
       input.next();
     }
     in = input.nextInt();
+    
+    //check if the input is in range
+    while(in > 100 || in < 1) {
+      System.out.println("That number is not in range!");
+      System.out.print("Please enter a new number: ");
+      in = input.nextInt();
+    }
     live--;
   }
 }
