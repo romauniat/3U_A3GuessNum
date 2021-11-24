@@ -6,7 +6,7 @@
 
 import java.util.*;
 
-public A3GuessNum{
+public class A3GuessNum{
   
   
   //main method
@@ -20,7 +20,7 @@ public A3GuessNum{
     int guess = -1; // default guess num.
     
     System.out.println("Guess a number");
-    int guess = input.nextInt();  
+    guess = input.nextInt();  
     
       
   }// close main
