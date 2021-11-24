@@ -17,7 +17,7 @@ public class A3GuessNum{
     System.out.println("\nShould you dare to play...");
     System.out.println("\nYou will have to guess a random number inside a range of numbers that is different each game.");
     System.out.println("You will have a limited number of guesses with hints after each guess you get wrong.");
-    System.out.println("\nDo you dare to play?");
+    System.out.println("\nDo you dare to challenge me?");
     System.out.println("\nPlease enter 'y' for Yes or 'n' for No");
     // New scanner, scan for input here, if statement after check for invalid input
     // No = output "No? Well okay, come back soon!" end program
@@ -25,7 +25,7 @@ public class A3GuessNum{
     // new scanner (scanner method?) scan for string. check for validity
     // output "Hi ______!"
 
-    // Start of a loop
+    // Start of a loop.
     // Are you ready to make your first guess?
     //"\nPlease enter 'y' for Yes or 'n' for No"
     // scanner
